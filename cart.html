@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ETHEREAL</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="cart.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>ETHEREAL</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="blogs()">Blog</a></li>
+                <li><a href="#" class="nav-link" onclick="abouts()">About</a></li>
+                <li><a href="#" class="nav-link" onclick="contacts()">Contact</a></li>
+                <li class="cart-icon">
+                    <a href="cart.html" class="cart-btn active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <!-- Cart Page Content -->
+        <div class="cart-page">
+            <h1><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+            
+            <div class="cart-container">
+                <div class="cart-items">
+                    <!-- Empty cart message -->
+                    <div class="empty-cart" id="empty-cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <h2>Your cart is empty</h2>
+                        <p>Add some products to your cart and start shopping!</p>
+                        <a href="index.html" class="shop-now-btn">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">₹0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="total-amount">₹0.00</span>
+                    </div>
+                    <button class="checkout-btn" disabled>
+                        <i class="fas fa-lock"></i>
+                        Checkout Securely
+                    </button>
+                    <a href="index.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i>
+                        Purchase
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

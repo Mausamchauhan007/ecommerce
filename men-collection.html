@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Collection - ETHEREAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>ETHEREAL</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li class="shop-dropdown">
+                <a href="#" class="nav-link active">Shop</a>
+                <div class="shop-dropdown-content">
+                    <a href="men-collection.html" class="active">
+                        <span>Men's Collection</span>
+                    </a>
+                    <a href="women-collection.html">
+                        <span>Women's Collection</span>
+                    </a>
+                </div>
+            </li>
+            <li><a href="#" class="nav-link" onclick="blogs()">Blog</a></li>
+            <li><a href="#" class="nav-link" onclick="abouts()">About</a></li>
+            <li><a href="#" class="nav-link" onclick="contacts()">Contact</a></li>
+            <li class="cart-icon">
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-content">
+            <button id="close-cart" class="close-cart-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2>Your Cart</h2>
+            <div class="cart-products"></div>
+            <div class="cart-total">
+                <p>Total: <span class="total-amount">₹0</span></p>
+            </div>
+            <div class="cart-buttons">
+                <button class="continue-shopping-btn">Continue Shopping</button>
+                <button class="checkout-btn">Checkout Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collection-header">
+            <h1>ETHEREAL</h1>
+            <p>Discover our latest men's fashion collection</p>
+        </div>
+
+        <div class="card">
+            <div class="crd">
+                <img src="Picture/Pic 1.jpg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Cotton Trending Hoodie</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/Pic 2.webp" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Cotton Trending Hoodie</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="crd">
+                <img src="Picture/anime legends.webp" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Cotton Trending Hoodie</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="crd">
+                <img src="Picture/dbz shirt.jpg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Cotton Trending Shirt's</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/lower-2.jpg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Trending joggers</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="crd">
+                <img src="Picture/Shoes.jpeg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Trending shoes</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/shoes.webp" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Trending shoes</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/naruto.webp" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Formal Collection</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/shoes 5.webp" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Trending shoes itachi</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/Lower.jpeg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Formal Collection</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/l m 1.jpeg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Formal Collection</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="crd">
+                <img src="Picture/shoes 4.jpg" alt="" onclick="show(this)">
+                <div class="crdText">
+                    <h2>Trending shoes</h2>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i> <br>
+                    <div class="price-container">
+                        <span class="price-current">₹1500</span>
+                        <span class="price-original">₹2000</span>
+                        <span class="price-discount">-25%</span>
+                    </div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

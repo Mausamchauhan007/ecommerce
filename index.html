@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime - Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="ETHEREAL REALM Logo" class="nav-logo">
+                <h1>ETHEREAL</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" id="home">Home</a></li>
+                <li class="shop-dropdown">
+                    <a href="#" class="nav-link" id="shop">Shop</a>
+                    <div class="shop-dropdown-content">
+                        <a href="men-collection.html">Men's Collection</a>
+                        <a href="women-collection.html">Women's Collection</a>
+                    </div>
+                </li>
+                <li><a href="#blogs" class="nav-link" id="blog">Blog</a></li>
+                <li><a href="#about" class="nav-link" id="about">About</a></li>
+                <li><a href="#contact" class="nav-link" id="contact">Contact</a></li>
+                <li class="cart-icon">
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+                <li class="profile-dropdown" id="profileSection" style="display: none;">
+                    <a href="#" class="nav-link profile-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userEmail"></span>
+                    </a>
+                    <div class="profile-dropdown-content">
+                        <a href="#" id="viewProfile">View Profile</a>
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
+                <li id="loginBtn">
+                    <a href="login page/loginPage.html" class="nav-link">Login/Signup</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+
+
+       
+        <!-- Cart Overlay -->
+        <div class="cart-overlay">
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h2>Shopping Cart</h2>
+                    <i class="fas fa-times" id="close-cart"></i>
+                </div>
+                <div class="cart-products">
+                    <!-- Products will be added here -->
+                </div>
+                <div class="cart-footer">
+                    <div class="total">
+                        <h3>Total:</h3>
+                        <span class="total-amount">₹0.00</span>
+                    </div>
+                    <div class="payment-section">
+                        <div class="payment-options">
+                            <div class="payment-method">
+                                <input type="radio" id="upi" name="payment" value="upi">
+                                <label for="upi"><i class="fas fa-mobile-alt"></i> UPI</label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="card" name="payment" value="card" checked>
+                                <label for="card"><i class="fas fa-credit-card"></i> Credit/Debit Card</label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="netbanking" name="payment" value="netbanking">
+                                <label for="netbanking"><i class="fas fa-university"></i> Net Banking</label>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <div class="form-group">
+                                <input type="text" id="cardNumber" placeholder="Card Number" maxlength="19">
+                                <i class="card-icon fas fa-credit-card"></i>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="cvv" placeholder="CVV" maxlength="3">
+                                    <i class="fas fa-question-circle cvv-info"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="cardName" placeholder="Name on Card">
+                            </div>
+                        </div>
+                        <button class="checkout-btn secure-checkout">
+                            Place your order
+                    </div>
+                    <button class="continue-shopping-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Continue Shopping
+                    </button>
+                    <div class="secure-badges">
+                        <i class="fas fa-shield-alt"></i> 100% Secure Payments
+                        <div class="payment-partners">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/2560px-Paytm_Logo_%28standalone%29.svg.png" alt="Paytm">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/RuPay.svg/2560px-RuPay.svg.png" alt="RuPay">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/2560px-Mastercard-logo.svg.png" alt="Mastercard">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mainpage -->
+        <div class="main">
+            <div class="mainText">
+                <h2>ETHEREAL</h2>
+                <h1 class="top">Super Value Deals</h1>
+                <h1>On All Products</h1>
+                <p>Discover the latest trends in fashion at ETHEREAL. From casual wear to elegant ensembles, we curate collections that blend style, comfort, and affordability. Our carefully selected pieces ensure you'll find the perfect outfit for any occasion.</p>
+                <button>Explore</button>
+            </div>
+            <img src="Picture/font img.webp" alt="" height="400" width="400" style="margin-top: 5%;">
+        </div>
+
+        <!-- cards -->
+        <div class="trend">
+            <div class="head" id="men">
+                <h1>Men's Wear</h1>
+            </div>
+            <div class="card">
+                <div class="crd">
+                    <img src="Picture/Pic 1.jpg" alt="Men's Fashion" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Cotton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="Picture/dbz shirt.jpg" alt="Anime T-Shirt" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Cotton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="crd">
+                    <img src="Picture/hoody.jpg" alt="Stylish Hoodie" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Cotton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="Picture/shirt anime.jpg" alt="Anime Fashion" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Casual Denim Shirt</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <div class="price-container">
+                            <span class="price-current">₹1599</span>
+                            <span class="price-original">₹2099</span>
+                            <span class="price-discount">-24%</span>
+                        </div>
+                        <button onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="collection-btn-container men">
+                <button onclick="window.location.href='men-collection.html'" class="collection-btn">
+                    View Men's Collection <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Women Card -->
+        <div class="trend" id="trendSec">
+            <div class="head">
+                <h1>Women's Wear</h1>
+            </div>
+            <div class="card">
+                <div class="crd">
+                    <img src="Picture/women modal.jpg" alt="Women's Fashion" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Trending Girl Top's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="Picture/women modal 2.jpg" alt="Women's Collection" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Trending Girl Top's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="Picture/new female img.jpg" alt="Women's Style" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Summer Collection</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <div class="price-container">
+                            <span class="price-current">₹1499</span>
+                            <span class="price-original">₹1999</span>
+                            <span class="price-discount">-25%</span>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="Picture/new modal.jpg" alt="Fashion Collection" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Summer Floral Dress</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <div class="price-container">
+                            <span class="price-current">₹1599</span>
+                            <span class="price-original">₹2099</span>
+                            <span class="price-discount">-24%</span>
+                        </div>
+                        <button onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="collection-btn-container women">
+                <button onclick="window.location.href='women-collection.html'" class="collection-btn women">
+                    View Women's Collection <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- about us -->
+        <div class="about">
+            <div class="aboutus">
+                <h1>#KnowUs</h1>
+                <p>Discover the latest trends in fashion at ETHEREAL. From casual wear to elegant ensembles, we curate collections that blend style, comfort, and affordability. Our carefully selected pieces ensure you'll find the perfect outfit for any occasion.</p>
+            </div>
+
+            <div class="me">
+                <img src="Picture/modal 1.jpg" alt="About Us Image">
+                <div class="aboutText">
+                    <h1>Who we are ?</h1>
+                    <p>At ETHEREAL, we're passionate about fashion and dedicated to providing our customers with the best shopping experience. Our team works tirelessly to bring you the latest styles, trends, and must-haves, ensuring you stay ahead of the fashion curve.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- contact -->
+        <div class="contact">
+            <div class="contactus">
+                <h1>#Let's Connect</h1>
+                <p>Connect with us to stay updated on the latest fashion trends, exclusive offers, and new arrivals. Join our fashion-forward community!</p>
+            </div>
+
+            <div class="contactMe">
+                <div class="contactText">
+                    <h1>Visit Our Office or Contact <br>
+                        Us Today</h1>
+                    <p>Address : Dablin Park, England, New york.</p>
+                    <p>Contact : dumiemail@gmail.com</p>
+                    <p>Number : 9999990011</p>
+                </div>
+                <img src="Picture/modal 1.jpg" alt="">
+            </div>
+
+            <div class="form">
+                <h1>Connect with Us</h1>
+                <input type="text" placeholder="Your Name" required> <br>
+                <input type="email" placeholder="Your Email" required> <br>
+                <textarea placeholder="Your Message" rows="4" required></textarea> <br>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+        <!-- cart -->
+        <div class="cart">
+            <img id="newImg" src="" alt="">
+            <div class="cartText">
+                <h1>Trends Offer : Trending Shop <br>
+                    Now</h1>
+                <h2>Special Price</h2>
+                <h2>₹11</h2>
+                <p>Discover the latest trends in fashion at ETHEREAL. From casual wear to elegant ensembles, we curate collections that blend style, comfort, and affordability. Our carefully selected pieces ensure you'll find the perfect outfit for any occasion.</p>
+                <p>Connect with us to stay updated on the latest fashion trends, exclusive offers, and new arrivals. Join our fashion-forward community!</p>
+                <p>At ETHEREAL, we're passionate about fashion and dedicated to providing our customers with the best shopping experience. Our team works tirelessly to bring you the latest styles, trends, and must-haves, ensuring you stay ahead of the fashion curve.</p>
+                <div class="btn">
+                    <button>Buy Now</button>
+                    <button onclick="addCart()">Add to Cart</button>
+                </div>
+                <button class="back">Back</button>
+
+            </div>
+        </div>
+
+        <!-- blogs -->
+        <div class="trends">
+            <div class="head">
+                <h1>Trends</h1>
+            </div>
+            <div class="card">
+                <div class="blog">
+                    <img src="Picture/hoody.jpg" alt="Trending Girl Clothes">
+                    <div class="blogText">
+                        <h2>Trending Girl Cloths</h2>
+                        <p>Discover the latest trends in fashion at ETHEREAL. From casual wear to elegant ensembles, we curate collections that blend style, comfort, and affordability.</p>
+                        <a href="https://influencermarketinghub.com/best-fashion-blogs/">Read More</a>
+                    </div>
+                </div>
+
+                <div class="blog">
+                    <img src="Picture/dbz shirt.jpg" alt="Trending Boys Clothes">
+                    <div class="blogText">
+                        <h2>Trending Boys Cloths</h2>
+                        <p>Connect with us to stay updated on the latest fashion trends, exclusive offers, and new arrivals. Join our fashion-forward community!</p>
+                        <a href="https://www.apetogentleman.com/">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter -->
+        <div class="letter">
+            <div class="letterText">
+                <h1 class="section-title">Sign Up for NewsLetter</h1>
+                <p>Connect with us to stay updated on the latest fashion trends, exclusive offers, and new arrivals. Join our fashion-forward community!</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About ETHEREAL</h3>
+                    <p>Discover the latest trends in fashion at ETHEREAL. We curate collections that blend style, comfort, and affordability, ensuring you'll find the perfect outfit for any occasion.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Shop</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#"><i class="fas fa-map-marker-alt"></i>Style City, 12345</a>
+                        </li>
+                        <li>
+                            <a href="tel:+1234567890"><i class="fas fa-phone"></i>+1 234 567 8900</a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@ETHEREAL REALM.com"><i class="fas fa-envelope"></i>info@ETHEREAL REALM.com</a>
+                        </li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div >
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-copyright"></i>2024 ETHEREAL. All rights reserved.</a></li>
+                            <li><a href="#"><i class="fas fa-heart"></i>Designed by ETHEREAL Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAh7b6iJUGXIV8eBbbOtAOT1Cgyt_p2f6Q",
+            authDomain: "anicosmos-653e0.firebaseapp.com",
+            projectId: "anicosmos-653e0",
+            storageBucket: "anicosmos-653e0.firebasestorage.app",
+            messagingSenderId: "846778707154",
+            appId: "1:846778707154:web:b424c516b0d8d27dd5910b",
+            measurementId: "G-M699RP2N9Q"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Get DOM elements
+        const loginSignupBtn = document.querySelector('#loginBtn a');
+        
+        // Add click handler for login button
+        loginSignupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'login page/loginPage.html';
+        });
+        
+        // Auth state observer
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in
+                loginSignupBtn.innerHTML = `
+                    <div class="user-menu">
+                        ${user.email}
+                        <div class="user-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Add logout handler
+                document.getElementById('logoutBtn')?.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    try {
+                        await auth.signOut();
+                        window.location.href = 'index.html';
+                    } catch (error) {
+                        console.error("Logout error:", error);
+                        alert('Error logging out. Please try again.');
+                    }
+                });
+            } else {
+                // User is signed out
+                loginSignupBtn.innerHTML = 'Login/Signup';
+            }
+        });
+    </script>
+
+    <style>
+        /* Add these styles for the user menu */
+        .user-menu {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            padding: 8px 0;
+            min-width: 150px;
+        }
+
+        .user-menu:hover .user-dropdown {
+            display: block;
+        }
+
+        .user-dropdown a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .user-dropdown a:hover {
+            background-color: #f5f5f5;
+        }
+
+        #logoutBtn {
+            color: #dc3545;
+            font-weight: 500;
+        }
+    </style>
+</body>
+
+</html>
